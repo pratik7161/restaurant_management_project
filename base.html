@@ -19,7 +19,14 @@
             <!--page content-->
             <main>
                 {% block content%}{% endblock%}
+                <h2>Wel come To our Restaurant</h2>
+                <p>Enjoy deliceious foood and cozy atmosphere!</p>
+
             </main>
+            <form method="get" action="">
+                <input type="text" name="q" placeholder="search menu items..."required>
+                <button type= "submimt">Search</button>
+            </form>
             <footer>
                 <p>&copy; {{year}} Restaurant Name. All rights Reserved.</p>
             </footer>
