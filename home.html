@@ -59,3 +59,13 @@ margin: bold;
     font-weight:bold;
     color: #27ae60;
 }
+{ % extends 'base.html' %}
+{% block content %}
+
+<div class="homepage">
+    <h1>Wel Come To {{restaurant name}}</h1>
+    <p> Yur favourite place for delicious food!</p>
+
+    <div class="map-continer">
+        <ifframe
+         src="htttps://www.google.com/maps/embeded" 
