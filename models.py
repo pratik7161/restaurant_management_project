@@ -6,3 +6,7 @@ class MenuItem(models.Model):
 
     def __str__(self):
         return self.name
+
+# for run migrations
+# python manage.py makemigrations
+# python manage.py migrtae
