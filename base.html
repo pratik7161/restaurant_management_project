@@ -18,9 +18,11 @@
             </header>
             <!--page content-->
             <main>
-                {% block content%}{% endblock%}
-                <h2>Wel come To our Restaurant</h2>
-                <p>Enjoy deliceious foood and cozy atmosphere!</p>
+                {% extends "base.html" %}
+                {% block content%}
+                <h1>Wel come to{{restaurant name}}</h1>
+                <p> Enjoy delicious mels with us!</p>               {% endblock%}
+                
 
             </main>
             <form method="get" action="">
