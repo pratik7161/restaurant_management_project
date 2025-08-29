@@ -1,12 +1,15 @@
-from django import models
-class MenuItem(models.Model):
+from django.db import models
+
+class Contact(models.Model):
     name = models.CharField(max_length=100)
-    description = models.TextField(blank=True)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
+    email = models.EmailField()
+    submittted_at = models.DateTimeField(auto_now_add=True)
+
 
     def __str__(self):
-        return self.name
+        return f"{self.name} - {self.email}"
 
-# for run migrations
-# python manage.py makemigrations
-# python manage.py migrtae
+
+# for rum migration 
+python manage.py makemigration
+python manage.py migrate
