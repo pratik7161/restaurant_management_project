@@ -11,4 +11,21 @@ python manage.py migrate
 
 from yourapp.models import Restaurant
 Restaurant.objects.create(name="My Reataurant", address="123 Main Street, city, country")
++
+from django.db imoprt models
+class Restaurant(models.Model):
+    name = models.CharFeild(max_length=200)
+    address = models.TextField()
+    opening_hours = models.JSONField(defualt=dict)
+def __str__(self):
+    return self.name
 
+#
+# data
+{"Monday": "9:00 AM - 9:00 PM",
+"Tuesday": "9:00AM - 9:00PM",
+"Wednesday": "9:00AM" - "9:00PM",
+"Thurseday": "9:00AM" - "9:00PM"
+"Friday": "9:00AM" - "11:00AM",
+"Saturday": "10:00AM" - "11:00AM",
+"Sunday": "closed"}
