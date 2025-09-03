@@ -29,3 +29,14 @@ def __str__(self):
 "Friday": "9:00AM" - "11:00AM",
 "Saturday": "10:00AM" - "11:00AM",
 "Sunday": "closed"}
++
+from django.db import models
+class MenuItem(models.Model):
+    name = models.Charfield(max_length=100)
+    description = models.TextField()
+    price = models.DecimalField(maxdigits=6, decimal_places=2)
+    image = models.ImageField(upload_to="menu_images/", blank=True, null=True)
+
+
+def __str__(self):
+    return self.name
