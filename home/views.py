@@ -1,9 +1,12 @@
 from django.shortcuts import render
 
-# Create your views here.
+from .models import Restaurant, MenuItem
+
 from django.conf import settings
 
-def home(request):
-    restaurant_name = settings.RESTAURANT_NAME
-    return render(request, "home.html", {"restaurant_name": restaurant_name})
+def homepage(request):
+    restaurant = Restaurant.objects.first()
+    items = MenuItem.objects.all()
+    return render(request, "home.html", {"restaurant_name": restaurant_name,
+    "items" : items,})
     
