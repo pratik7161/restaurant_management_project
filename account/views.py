@@ -1,7 +1,13 @@
 from django.shortcuts import render
 
-# Create your views here.
-from django.conf import settings
+from .models import MenuItem
+def homepage(request):
+     query = request.GET.get("q","")  # Get search term from UR;
+     items = MenuItem.objects.all()
 
-def home(request):
-    restaurant_name = settings.RESTAURANT_NAME
+     if query:
+        items = [item for item in item if query.lower() in item.name.lower()]
+    return render (request, "homepage.html", {
+        "item": items,
+        "query": query,
+    })
