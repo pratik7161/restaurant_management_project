@@ -17,6 +17,9 @@ class Restaurant(models.Model):
     name = models.CharFeild(max_length=200)
     address = models.TextField()
     opening_hours = models.JSONField(defualt=dict)
+    phone_number = models.CharFeild(max_length=20, blank=True)
+    logo = models.ImageField(upload_to= 'restaurant_logos/', blank= True, null = True)
+    
 def __str__(self):
     return self.name
 
