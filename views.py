@@ -24,3 +24,6 @@ return render(request, "homepage.html",{
     "cart_count": cart_count,
     
 })
+
+# from django import series
+# from .models import Model
