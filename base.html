@@ -1,36 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="UTF-8">
-        <title> Restaurant</title>
-        <link rel="stylesheet" href={% static 'css/style.css' %"}
-        </head>
-        <body>
-            <!-- Header -->
-            <header>
-                <h1>Restaurant Name</h1>
-                <nav>
-                    <a href="{% url 'home' %}">Home</a> |
-                    <a href="{% url 'contact' %}">Contact</a> |
-                    <a href="{% url 'reservation' %}">Reservation</a>
-                    <a href="{%url 'feedback' %}">feedback</a>
-                </nav>
-            </header>
-            <!--page content-->
-            <main>
-                {% extends "base.html" %}
-                {% block content%}
-                <h1>Wel come to{{restaurant name}}</h1>
-                <p> Enjoy delicious mels with us!</p>               {% endblock%}
-                
-
-            </main>
-            <form method="get" action="">
-                <input type="text" name="q" placeholder="search menu items..."required>
-                <button type= "submimt">Search</button>
-            </form>
-            <footer>
-                <p>&copy; {{year}} Restaurant Name. All rights Reserved.</p>
-            </footer>
-        </body>
+        <title>{% block title %}Restaurant{% endblock%}</title>
+        <style>
+            .breadcrumbs{
+            fonr-size: 14px;
+            margin: 10px 0;
+            }
+            .breadcrumbs a{
+            text-decoration: none;
+            color: #3498db;
+            }
+            .breadcrumbs a:hover{
+            text-decoration: underline:
+            }
+            .breadcrumbs span{
+            color: #555;
+            }
+            </style>
+    </head>
+    <body>
+        <nav class="breadcrumbs">
+            {% block breadcrumbs %}{% endblock %}
+        </nav>
+    </body>
 </html>
