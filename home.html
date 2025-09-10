@@ -62,14 +62,16 @@ margin: bold;
 { % extends 'base.html' %}
 {% block content %}
 
-<div class="homepage">
-    <h1>Wel Come To {{restaurant name}}</h1>
-    <p> Yur favourite place for delicious food!</p>
-    <p style="font-size: 18px; font-weight: bold; color:#2c3e50;">
-        Call Us: {{phone_number}}
-    </p>
-
-    <div class="map-continer">
-        <ifframe
-         src="htttps://www.google.com/maps/embeded" 
-
+<div class="restaurant-header" style="text-align: center; margin: 20px 0;">
+    {% if reastaurant.logo %}
+      <img src="{{ reastaurant.logo.url}}" alt="{{reastaurant.name}} Logo" style="max-height:100px; margin-bottom:10px;">
+      {% endif %}
+      <h1 style="font-family: 'Segoe UI', Tahoma,Geneva,Verdana,sans-serif">
+        {{reastaurant.name}}
+      </h1>
+      <p style="font-size: 18px; color:#555; font-style: italic;">
+        Welcome to {{reastaurant.name}} - where taste meets tradition
+      </p>
+      <p><strong> Address:</strong> {{restauerant.address}}</p>
+      <p><strong> Phone:</strong>  {{restaurant.phone_number}}</p>
+</div>
