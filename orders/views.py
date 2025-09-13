@@ -8,3 +8,9 @@ def  faq(request):
         {"question": "do you offer vegetarian options?", "answer":"yes , offcourse"}
         ]
         return render(request,"faq.html",{"faqs": faqs})
+def format_datetime(value, format_string="%A,%B,%C,%Y,%I"):
+    """formats a datetime object using the given format string."""
+    if not value:
+        value = timezone.now()
+    return value.strftime(format_string)
+    
